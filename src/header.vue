@@ -1,27 +1,25 @@
 <template>
   <div class="m_header">
-    <div>메뉴1</div>
+    <div @click="clickAlert">메뉴3</div>
     <div>메뉴2</div>
-    <div>메뉴3</div>
+    <div>메뉴1</div>
   </div>
 </template>
 
 <script>
+import HelloWorld from './HelloWorld.vue'
 export default {
   name: 'app',
   data: () => {
     return {
-      arr: [1,2,3]
+     a: 1, 
     }
   },
-  mounted () {
-    console.log(3);
+  mounted() {
+    console.log(this.arr);
+    console.log(this);
   },
-  methods: {
-    clickAlert() {
-      alert(1);
-    }
-  }
+  extends: HelloWorld 
 }
 </script>
 <style scoped>
@@ -30,7 +28,7 @@ export default {
   flex: 0 1 auto;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: navy;
   height: 60px;
 }
 .m_header > div {
